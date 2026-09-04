@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS bookings (
 );
 `);
 
-const adminMobile = "9999999999";
-const adminPassword = bcrypt.hashSync("admin123", 10);
+const adminMobile = "8778904674";
+const adminPassword = bcrypt.hashSync("Siva@2008", 10);
 db.prepare(`INSERT OR IGNORE INTO users(name,mobile,address,password,role)
 VALUES(?,?,?,?,?)`).run("RJM Admin", adminMobile, "RJM Transport Office", adminPassword, "admin");
 
