@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "install:all": "npm install && npm --prefix client install",
+    "build": "npm install && npm --prefix client install && npm --prefix client run build",
     "dev": "concurrently \"node server.js\" \"npm --prefix client run dev\"",
     "start": "node server.js"
   },
