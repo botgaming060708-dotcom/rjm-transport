@@ -3,7 +3,7 @@ import {createRoot} from "react-dom/client";
 import {MapPin,Truck,Package,CalendarDays,Clock,Phone,ShieldCheck,ArrowRight,LogOut,LayoutDashboard,ClipboardList,CheckCircle,XCircle,Menu} from "lucide-react";
 import "./styles.css";
 
-const API="http://localhost:5000/api";
+const API="https://rjm-transport.onrender.com/api";
 const getToken=()=>localStorage.getItem("rjm_token");
 async function api(path,opts={}){const r=await fetch(API+path,{...opts,headers:{"Content-Type":"application/json",...(opts.headers||{}),...(getToken()?{Authorization:"Bearer "+getToken()}: {})}});const d=await r.json();if(!r.ok)throw Error(d.message||"Request failed");return d}
 
