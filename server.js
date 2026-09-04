@@ -3,6 +3,7 @@ const cors = require("cors");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Database = require("better-sqlite3");
+const path = required("path")
 
 const app = express();
 const PORT = 5000;
@@ -11,6 +12,17 @@ const db = new Database("rjm_transport.db");
 
 app.use(cors());
 app.use(express.json());
+// Serve React frontend
+const frontendPath = path.join(__dirname, "client", "dist");
+
+app.use(express.static(frontendPath));
+
+app.use((req, res, next) => {
+    if (req.method === "GET" && !req.path.startsWith("/api")) {
+        return res.sendFile(path.join(frontendPath, "index.html"));
+    }
+    next();
+});
 
 db.exec(`
 CREATE TABLE IF NOT EXISTS users (
