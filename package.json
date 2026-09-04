@@ -1,0 +1,19 @@
+{
+  "name": "rjm-transport",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm --prefix client install",
+    "dev": "concurrently \"node server.js\" \"npm --prefix client run dev\"",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
