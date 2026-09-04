@@ -3,7 +3,7 @@ const cors = require("cors");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Database = require("better-sqlite3");
-const path = required("path");
+const path = require("path");
 
 const app = express();
 const PORT = 5000;
